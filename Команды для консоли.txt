@@ -1,0 +1,51 @@
+https://github.com/AlexRodving/Django_Blog/
+
+python -m venv имя - создание вирт среды
+
+Set-ExecutionPolicy RemoteSigned - если не работает venv
+(задаст вопрос - ответить A)
+
+source имя/bin/activate - активация вирт Linux
+
+название\Scripts\activate.bat - активация вирт Win
+
+deactivate - деактив
+
+pip install django==3.2  - установка Django
+
+django-admin startproject my_blog - инициализация проекта
+
+python manage.py runserver - запуск сервера
+
+python manage.py startapp blog - инициализация приложения
+
+python manage.py migrate - миграции для БД
+
+python manage.py createsuperuser - создание записи суперпользовотеля
+
+python manage.py makemigrations - обновления структуры базы
+
+pip install djangorestframework - установка Rest фрейворка
+
+pip install django-cors-headers - установка cors
+
+**************************** Регистрация RestAPI**************************************
+INSTALLED_APPS = [
+	**************
+ 'rest_framework', #Rest API
+ 'corsheaders',    #Rest API
+        ***********
+]
+
+MIDDLEWARE = [
+    *******************************************
+    'corsheaders.middleware.CorsMiddleware',      #Rest API
+    'django.middleware.common.CommonMiddleware',  #Rest API
+
+]
+
+CORS_ORIGIN_ALLOW_ALL = True    # Rest API
+# разрешить обработку запросов, приходящих с любых доменов,
+# но только к тем путям, что включают префикс api
+CORS_URLS_REGEX = r'^/api/.*$'  # Rest API
+****************************************************************************************
